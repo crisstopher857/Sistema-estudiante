@@ -1,0 +1,22 @@
+-encoding
+'UTF-8'
+-protected
+--release
+26
+-sourcepath
+'C:/Users/criss/Downloads/sistema-estudiantes/sistema-estudiantes/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2026. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/criss/Downloads/sistema-estudiantes/sistema-estudiantes/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'sistema-estudiantes 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'sistema-estudiantes 1.0-SNAPSHOT API'
