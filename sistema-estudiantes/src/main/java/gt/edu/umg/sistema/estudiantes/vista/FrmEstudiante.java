@@ -70,13 +70,13 @@ public class FrmEstudiante extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Nombre", "Apellido", "Carnet", "Correo"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -154,7 +154,7 @@ public class FrmEstudiante extends javax.swing.JFrame {
     
     public void cargarDatosTabla(List<Estudiante> listaEstudiantes) {
     // 1. Definir los encabezados de las columnas
-    String[] columnas = {"ID", "Nombre", "Apellido", "Correo"}; 
+    String[] columnas = {"ID", "Nombre", "Apellido", "Carnet", "Correo"};
     
     // 2. Crear el modelo (bloqueando la edición directa si lo deseas)
     DefaultTableModel modelo = new DefaultTableModel(columnas, 0) {
@@ -183,7 +183,6 @@ public class FrmEstudiante extends javax.swing.JFrame {
     private void BtnGrabarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGrabarActionPerformed
         // TODO add your handling code here:
         Estudiante estudiante = new Estudiante();
-        estudiante.setId(Integer.parseInt(txtId.getText()));
         estudiante.setNombres(txtNombres.getText());
         estudiante.setApellidos(txtApellidos.getText());
         estudiante.setCarnet(txtCarnet.getText());
@@ -212,16 +211,22 @@ public class FrmEstudiante extends javax.swing.JFrame {
         txtApellidos.setText("");
         txtEmail.setText("");
         txtCarnet.setText("");
-    }
+    } 
     
-    private void refrescarTabla() 
-    {try {
-            // Ajusta 'listar()' por el nombre del método de tu EstudianteController que devuelve la listaList lista = controller.listar();
-            cargarDatosTabla(controller.GetEstudiantes());
-        } catch (Exception e) {
-            logger.severe("No se pudo cargar la lista de estudiantes: " + e.getMessage());
-        }}
-      
+   private void refrescarTabla() {
+
+    try {
+
+        cargarDatosTabla(controller.GetEstudiantes());
+
+    } catch (Exception e) {
+
+        logger.severe(
+                "No se pudo cargar la lista de estudiantes: "
+                + e.getMessage()
+        );
+    }
+}
     /**
      * @param args the command line arguments
      */
